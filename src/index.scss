@@ -11,7 +11,7 @@ body {
   height: fit-content;
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: rgb(45, 44, 44);
 }
 
 h1 {
@@ -21,6 +21,8 @@ h1 {
 }
 
 button {
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 ul {
@@ -38,7 +40,7 @@ ul {
   width: 70vh;
 }
 li {
-  //border: 1.5px solid white;
+  border: 0.025px solid rgb(97, 95, 95);
   // background-color: red;
   display: flex;
   align-items: center;
@@ -48,6 +50,7 @@ li {
 
 footer {
   text-align: center;
+  padding-top: 20px;
 }
 
 .glow-on-hover {
