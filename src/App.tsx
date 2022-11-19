@@ -73,19 +73,29 @@ export function App() {
     setGame(await response.json())
   }
 
-  function transformCellClassName(value: string | number) {
+  function transformCellValue(value: string | number) {
     switch (value) {
       case 'F':
-        return 'cell-flag'
-
+        return <i className="fa-solid fa-flag"></i>
       case '*':
-        return 'cell-bomb'
-
+        return <i className="fa-solid fa-bomb"></i>
       case '_':
-        return 'cell-free'
+        return ' '
+    }
+    return value
+  }
+  function transformCellClassName(value: string | number) {
+    if (value === 'F') {
+      return 'cell-flag'
+    }
+    if (value === '*') {
+      return 'cell-bomb'
+    }
+    if (value === '_') {
+      return 'cell-free'
     }
     if ([1, 2, 3, 4, 5, 6, 7, 8].includes(Number(value))) {
-      return `cell-number cell-${value}`
+      return 'cell-number'
     }
     return undefined
   }
@@ -109,6 +119,7 @@ export function App() {
         {game.board.map((row, rowIndex) =>
           row.map((column, columnIndex) => (
             <li
+              className={transformCellClassName(column)}
               onClick={() => {
                 handleLeftClickCell(rowIndex, columnIndex)
               }}
@@ -118,7 +129,7 @@ export function App() {
               }}
               key={`${rowIndex}-${columnIndex}`}
             >
-              {column}
+              {transformCellValue(column)}
             </li>
           ))
         )}

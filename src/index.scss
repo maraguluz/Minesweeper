@@ -384,3 +384,19 @@ footer {
     transition-delay: 0s !important;
   }
 }
+.cell-flag {
+  background-color: transparent;
+  color: white;
+}
+
+.cell-free {
+  background-color: yellow;
+}
+
+.cell-bomb {
+  background-color: transparent;
+  color: red;
+}
+.cell-number {
+  color: white;
+}
